@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>XY- Services</title>
+    
+
+    <link rel="stylesheet" href="static/styles.css">
+
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container container">
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo"> <a href="/">XY Transport </a> </div>
+            <ul class="links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact&nbsp;Us</a></li>
+            </ul>
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+        </div>
+    </nav>
+
+    <div class="nav-spacer"></div>
+
+
+    
+
+
+
+<div class="sect">
+    <div class="container">
+
+        <div class="pagedesc">
+            <h1>Services catalog</h1>
+            <p class="max-w-60">Check out our services or use the tool below to get a price estimate for trips.</p>
+        </div>
+
+        
+
+        <div class="cont-card" data-aos="fade" data-aos-delay="0" data-aos-duration="1000"
+            data-aos-anchor-placement="top-bottom">
+            <img src="static/icons/cab.png" alt="">
+            <div class="card-body">
+                <h2>Private Transport</h2>
+                <p>We provide reliable and timely private transportation services for both individuals and corporates. We ensure our clients get where they need to, comfortably and on time.</p>
+            </div>
+        </div>
+        
+
+        <div class="cont-card" data-aos="fade" data-aos-delay="0" data-aos-duration="1000"
+            data-aos-anchor-placement="top-bottom">
+            <img src="static/icons/office.png" alt="">
+            <div class="card-body">
+                <h2>Office Relocation</h2>
+                <p>We provide efficient office relocation services that help you move your business operations with minimal downtime. We ensure your office goods are transported securely.</p>
+            </div>
+        </div>
+        
+
+        <div class="cont-card" data-aos="fade" data-aos-delay="0" data-aos-duration="1000"
+            data-aos-anchor-placement="top-bottom">
+            <img src="static/icons/box.png" alt="">
+            <div class="card-body">
+                <h2>Packers and Movers</h2>
+                <p>Moving to a new place can be stressful. Our packing and moving services takes away the headache of moving your belonging to another place.</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="sect">
+    <div class="container">
+
+        <div class="pricebox">
+            <h2>Get a trip estimate</h2>
+
+            <div class="item">
+                <label class="top" for="">Distance</label>
+                <input type="number" name="km" id="dist" placeholder="Distance (km)">
+            </div>
+            <div class="item">
+                <label class="top" for="">Duration (Optional)</label>
+                <input type="number" name="km" id="duration" placeholder="Duration (hours)">
+            </div>
+
+            <div class="item">
+
+                <label for="round">
+                    <input type="checkbox" name="Round Trip? " id="round">&nbsp;Round trip ?</label>
+
+            </div>
+
+            <div class="item">
+                <button onclick="calculate()">
+                    Calculate
+                </button>
+            </div>
+            <div class="item">
+                <p id="result">Rs.0.00 </p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="sect ">
+    <h2 class="text-center max-w-60 btm-cta"> Contact us for further details and indidualized quotes or to book a
+        service.</h2>
+    <div class="action-btn">
+        <a href="/contact.html" class="services-btn">Contact Us &rarr;</a>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+<script>
+
+    AOS.init();
+
+    function calculate() {
+        const distance_box = document.getElementById("dist");
+        const duration_box = document.getElementById("duration");
+        const checkbox = document.getElementById("round");
+        const resultbox = document.getElementById("result")
+
+        const distance = parseFloat(distance_box.value);
+        const duration = duration_box.value ? parseFloat(duration_box.value) : null;
+        const isRoundTrip = checkbox.checked;
+
+        let dur_mult = 1;
+        let threshold = 125;
+
+        if (isNaN(distance) || distance <= 0) {
+            alert("Please enter a valid distance.");
+            return;
+        }
+
+        if (isRoundTrip) {
+            distance *= 2;
+            dur_mult = 2;
+        }
+
+        let distancePrice = distance <= threshold ? distance * 19 : (threshold * 19) + ((distance - threshold) * 16);
+
+        let durationPrice;
+        if (duration !== null) {
+            durationPrice = (duration * dur_mult) <= 8 ? duration * 30 : (8 * 30) + ((duration - 8) * 125);
+        } else {
+            const defaultDuration = (distance / 30) * dur_mult;
+            durationPrice = defaultDuration <= 8 ? defaultDuration * 30 : (8 * 30) + ((defaultDuration - 8) * 125);
+        }
+
+        let totalPrice = distancePrice + durationPrice;
+        // totalPrice = Math.round(totalPrice / 10) * 10;
+        const formattedPrice = "Rs. " + totalPrice.toFixed(2);
+        resultbox.innerHTML = formattedPrice;
+    }
+
+
+</script>
+
+
+
+
+
+    <footer>
+        XY Transport Ltd.
+    </footer>
+</body>

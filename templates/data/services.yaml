@@ -1,0 +1,10 @@
+services:
+  - title: Private Transport 
+    desc: We provide reliable and timely private transportation services for both individuals and corporates. We ensure our clients get where they need to, comfortably and on time.
+    iconfile: cab.png
+  - title: Office Relocation 
+    desc: We provide efficient office relocation services that help you move your business operations with minimal downtime. We ensure your office goods are transported securely.
+    iconfile: office.png
+  - title: Packers and Movers 
+    desc: Moving to a new place can be stressful. Our packing and moving services takes away the headache of moving your belonging to another place.
+    iconfile: box.png

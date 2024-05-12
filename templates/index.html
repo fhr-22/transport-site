@@ -1,0 +1,109 @@
+{% extends "header_footer.html" %}
+
+{% block description %}XY Transport - Transport solutions @ Kolkata and beyond.{% endblock %}
+
+{% block title %}XY Transport - Home{% endblock %}
+{% block extra_head %}
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+{% endblock %}
+{% block content %}
+
+
+<div class="container hero-box">
+	<div class="half">
+		<p class="lead">We provide diverse and reliable transportation services @ Kolkata and beyond.</p>
+	</div>
+	<div class="half">
+		<img src="static/photo.svg" alt="">
+	</div>
+
+</div>
+
+<div class="sect grey-bg">
+	<div class="container">
+		<h2>What we do : <span id="service_names"></span> </h2>
+		<p>At XY transport, our mission is to take away the hassle of transportaion and help you move
+			the things you care about. Whether it's the furniture at your home that you've carefully curated over
+			the
+			years or bla bla whatever, we have transportaions solutions for everyone.</p>
+	</div>
+</div>
+
+<div class="sect fleet-sec">
+	<div class="container">
+		<h2 class="text-center">Our fleet is equipped to meet diverse requirements. </h2>
+		<div class="cardbox">
+			<div class="card" data-aos="fade" data-aos-delay="0" data-aos-duration="1000">
+				<div class="icon">
+					<img src="static/vehicles/sedan.jpg" alt="">
+				</div>
+				<p class="card-desc">Sedans</p>
+			</div>
+			<div class="card" data-aos="fade" data-aos-delay="200" data-aos-duration="1000">
+				<div class="icon">
+					<img src="static/vehicles/truck.jpg" alt="">
+				</div>
+				<p class="card-desc">SUVs</p>
+			</div>
+			<div class="card" data-aos="fade" data-aos-delay="400" data-aos-duration="1000">
+				<div class="icon">
+					<img src="static/vehicles/sumo.jpg" alt="">
+				</div>
+				<p class="card-desc">Trucks</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="sect grey-bg">
+
+	<h2 class="text-center sans-font">Our past clients include : </h2>
+	<div class="client-box">
+		<div class="client-card" data-aos="fade" data-aos-delay="0" data-aos-duration="1000">
+			<img src="static/brands/flipkart.png" alt="">
+		</div>
+		<div class="client-card" data-aos="fade" data-aos-delay="100" data-aos-duration="1000">
+			<img src="static/brands/amazon.png" alt="">
+		</div>
+		<div class="client-card" data-aos="fade" data-aos-delay="200" data-aos-duration="1000">
+			<img src="static/brands/bigbasket.png" alt="">
+		</div>
+		<div class="client-card" data-aos="fade" data-aos-delay="300" data-aos-duration="1000">
+			<img src="static/brands/blinkit.png" alt="">
+		</div>
+
+	</div>
+	<h2 class="text-center max-w-60 sans-font">
+		and many more corporate offices & individuals who have trusted us to bring them around.
+	</h2>
+</div>
+
+<div class="sect ">
+	<h2 class="text-center max-w-60 btm-cta">
+		Exlpore our services and pick the one that suits your needs, or contact us
+		to discuss details.
+	</h2>
+	<div class="action-btn">
+		<a href="/services.html" class="services-btn">Services &rarr;</a>
+		<a href="/contact.html" class="services-btn">Contact Us &rarr;</a>
+	</div>
+
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+	AOS.init();
+	var typed = new Typed('#service_names', {
+		strings: ['Private Transport',
+			'Office Relocation',
+			'Goods Transport',
+			'Packing and Moving'],
+		typeSpeed: 40,
+		backDelay: 1500,
+		loop: true,
+	});
+
+</script>
+
+{% endblock %}

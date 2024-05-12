@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>XY - Contact Us</title>
+    
+<script src="static/tiny-toast.js"></script>
+
+
+    <link rel="stylesheet" href="static/styles.css">
+
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container container">
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo"> <a href="/">XY Transport </a> </div>
+            <ul class="links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact&nbsp;Us</a></li>
+            </ul>
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+        </div>
+    </nav>
+
+    <div class="nav-spacer"></div>
+
+
+    
+
+
+
+<div class="sect">
+    <div class="container">
+        <div class="pagedesc">
+            <h1>Contact Us</h1>
+            <p>Feel free to reach out to us for service related questions or tracking enquiries.
+                You may choose to contact us through the given means or share your query and details, and we'll get
+                back to you. </p>
+        </div>
+
+
+        <div class="cont-card contact-details" onclick="copy_number()">
+            <img src="static/icons/whatsapp.png" alt="">
+            <div class="card-body">
+                <h2>Mobile (WhatsApp)</h2>
+                <p>+91 8877 666 555</p>
+            </div>
+        </div>
+
+        <div class="cont-card contact-details" onclick="copy_servmail()">
+            <img src="static/icons/email.png" alt="">
+            <div class="card-body">
+                <h2>E-Mail (for service queries)</h2>
+                <p>services@xytransport.in</p>
+            </div>
+        </div>
+        <div class="cont-card contact-details" onclick="copy_trmail()">
+            <img src="static/icons/email.png" alt="">
+            <div class="card-body">
+                <h2>E-Mail (for tracking queries)</h2>
+                <p>tracking@xytransport.in</p>
+            </div>
+        </div>
+        <div class="cont-card contact-details" onclick="copy_addr()">
+            <img src="static/icons/address.png" alt="">
+            <div class="card-body">
+                <h2>Address</h2>
+                <p>Building No. 5, Street Name, Kolkata 700999, West Bengal</p>
+            </div>
+        </div>
+
+        <div class="form-embed">
+
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdMQ0Bgrsa_WDOsQGbE1sytpjOgl6Kxxa4rVJ9Z_Aip7slCjQ/viewform?embedded=true"
+                frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
+
+</div>
+<script>
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                toast.success("Copied !", 2500);
+            })
+            .catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+    }
+
+    function copy_number() {
+        copyToClipboard("+91 8877 666 555")
+    }
+
+    function copy_servmail() {
+        copyToClipboard("services@xytransport.in")
+    }
+    function copy_trmail() {
+        copyToClipboard("tracking@xytransport.in")
+    }
+    function copy_addr() {
+        copyToClipboard("Building No. 5, Street Name, Kolkata 700999, West Bengal")
+    }
+
+</script>
+
+
+
+    <footer>
+        XY Transport Ltd.
+    </footer>
+</body>

@@ -1,0 +1,9 @@
+jobs:
+  - title: Driver 
+    desc: Drivers with 3+ years of experience and valid license are welcome to apply.
+    iconfile: driver.png
+  - title: Fleet Manager 
+    desc: >
+      Individuals with 2+ years of fleet management experience,  
+      handling signficant transportation or cargo movement operations.
+    iconfile: calendar.png
